@@ -39,5 +39,14 @@ public class Camera_Control : MonoBehaviour
 
         // Rotate the object intered into playerBody
         playerBody.Rotate(Vector3.up * mouseX);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (Cursor.lockState == CursorLockMode.Locked)
+                Cursor.lockState = CursorLockMode.None;
+            
+            if (Cursor.lockState == CursorLockMode.None)
+                Cursor.lockState = CursorLockMode.Locked;
+
+        }
     }
 }
